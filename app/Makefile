@@ -6,3 +6,6 @@ install:
 
 run:
 		./gradlew run
+
+lint:
+	./gradlew checkstyleMain
