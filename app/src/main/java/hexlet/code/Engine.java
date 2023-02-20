@@ -16,8 +16,7 @@ public class Engine {
 
             if (answer.equals(rightAnswer[i])) {
                 System.out.println("Correct!");
-            }
-            else if (!answer.equals(rightAnswer[i])) {
+            } else if (!answer.equals(rightAnswer[i])) {
                 System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was"
                         + "'" + rightAnswer[i] + "'");
                 System.out.println("Let's try again, " + userName + "!");
@@ -27,3 +26,5 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
     }
 }
+
+
