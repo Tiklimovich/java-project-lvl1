@@ -24,8 +24,8 @@ public class Calc {
         String[] questions = new String[Engine.ROUNDS];
         String[] rightAnswer = new String[Engine.ROUNDS];
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int value1 = Utils.generateRandomNumber(0, 101);
-            int value2 = Utils.generateRandomNumber(0, 101);
+            int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
+            int value2 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             String signRandom = SIGNS[Utils.generateRandomNumber(SIGNS.length)];
             questions[i] = value1 + " " + signRandom + " " + value2;
             rightAnswer[i] = calcResult(signRandom, value1, value2);
