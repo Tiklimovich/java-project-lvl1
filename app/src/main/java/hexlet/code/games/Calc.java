@@ -21,15 +21,14 @@ public class Calc {
         return sign;
     }
     public static void startCalcGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] rightAnswer = new String[Engine.ROUNDS];
+        String[][] questionsAnswer = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             int value2 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             String signRandom = SIGNS[Utils.generateRandomNumber(SIGNS.length)];
-            questions[i] = value1 + " " + signRandom + " " + value2;
-            rightAnswer[i] = calcResult(signRandom, value1, value2);
+            questionsAnswer[i][0] = value1 + " " + signRandom + " " + value2;
+            questionsAnswer[i][1] = calcResult(signRandom, value1, value2);
         }
-        Engine.goGame(EVEN_DESCRIPTION, questions, rightAnswer);
+        Engine.goGame(EVEN_DESCRIPTION, questionsAnswer);
     }
 }

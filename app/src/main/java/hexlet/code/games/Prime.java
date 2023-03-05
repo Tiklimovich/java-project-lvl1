@@ -14,14 +14,13 @@ public class Prime {
         return "yes";
     }
     public static void startPrimeGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] rightAnswer = new String[Engine.ROUNDS];
+        String[][] questionsAnswer = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value = Utils.generateRandomNumber(2, Utils.MAX_NUMBER);
-            questions[i] = Integer.toString(value);
-            rightAnswer[i] = primeResult(value);
+            questionsAnswer[i][0] = Integer.toString(value);
+            questionsAnswer[i][1] = primeResult(value);
         }
-        Engine.goGame(EVEN_DESCRIPTION, questions, rightAnswer);
+        Engine.goGame(EVEN_DESCRIPTION, questionsAnswer);
     }
 }
 

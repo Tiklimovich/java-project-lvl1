@@ -8,29 +8,32 @@ public class Progression {
     static final int MIN_LENGTH_OF_PROGRESSION = 5;
     static final int MAX_LENGTH_OF_PROGRESSION = 10;
     static final int MAX_STEP = 10;
-    public static void startProgressionGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] rightAnswer = new String[Engine.ROUNDS];
+    public static int[] progression(int value1, int step, int lengthOfProgression) {
+        int[] result = new int[lengthOfProgression];
+        for (int i = 0; i < lengthOfProgression; i++) {
+            result[i] = value1 + step * i;
+        }
+        return result;
+    }
+    public static void startProgressionsGame() {
+        String[][] questionsAnswer = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int lengthOfProgression = Utils.generateRandomNumber(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
-            int[] values = new int[lengthOfProgression];
+            int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             int step = Utils.generateRandomNumber(MAX_STEP);
-            values[0] = Utils.generateRandomNumber(Utils.MAX_NUMBER);
-            for (int j = 0; j < values.length; j++) {
-                values[j] = values[0] + step * j;
-            }
+            int lengthOfProgression = Utils.generateRandomNumber(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
+            int[] values = progression(value1, step, lengthOfProgression);
             int answer = Utils.generateRandomNumber(1, lengthOfProgression - 1);
             String question = "";
             for (int l = 0; l < lengthOfProgression; l++) {
                 if (l == answer) {
                     question += ".." + " ";
-                } else if (l != answer) {
+                } else {
                     question += values[l] + " ";
                 }
             }
-            questions[i] = question;
-            rightAnswer[i] = Integer.toString(values[answer]);
+            questionsAnswer[i][0] = question;
+            questionsAnswer[i][1] = Integer.toString(values[answer]);
         }
-        Engine.goGame(EVEN_DESCRIPTIONS, questions, rightAnswer);
+        Engine.goGame(EVEN_DESCRIPTIONS, questionsAnswer);
     }
 }

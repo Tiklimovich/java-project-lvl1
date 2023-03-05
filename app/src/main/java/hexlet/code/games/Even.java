@@ -5,15 +5,20 @@ import hexlet.code.Engine;
 
 public class Even {
     static final String EVEN_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static String evenResult(int value) {
+        if (value % 2 == 0) {
+            return "yes";
+        }
+        return "no";
+    }
     public static void startEvenGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] rightAnswer = new String[Engine.ROUNDS];
+        String[][] questionsAnswer = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value = Utils.generateRandomNumber(Utils.MAX_NUMBER);
-            questions[i] = Integer.toString(value);
-            rightAnswer[i] = (value % 2 == 0) ? "yes" : "no";
+            questionsAnswer[i][0] = Integer.toString(value);
+            questionsAnswer[i][1] = evenResult(value);
         }
-        Engine.goGame(EVEN_DESCRIPTION, questions, rightAnswer);
+        Engine.goGame(EVEN_DESCRIPTION, questionsAnswer);
     }
 }

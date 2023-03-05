@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import java.util.Scanner;
+
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Gcd;
@@ -36,7 +37,7 @@ public class App {
                 Gcd.startGcdGame();
                 break;
             case "5":
-                Progression.startProgressionGame();
+                Progression.startProgressionsGame();
                 break;
             case "6":
                 Prime.startPrimeGame();
@@ -44,5 +45,6 @@ public class App {
             default:
                 System.out.println("Wrong input");
         }
+        System.out.println("Goodbye!");
     }
 }

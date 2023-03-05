@@ -17,14 +17,14 @@ public class Gcd {
     }
 
     public static void startGcdGame() {
-        String[] questions = new String[Engine.ROUNDS];
-        String[] rightAnswer = new String[Engine.ROUNDS];
+        String[][] questionsAnswer = new String[Engine.ROUNDS][2];
+
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             int value2 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
-            questions[i] = value1 + " " + value2;
-            rightAnswer[i] = gcdResult(value1, value2);
+            questionsAnswer[i][0] = value1 + " " + value2;
+            questionsAnswer[i][1] = gcdResult(value1, value2);
         }
-        Engine.goGame(EVEN_DESCRIPTIONS, questions, rightAnswer);
+        Engine.goGame(EVEN_DESCRIPTIONS, questionsAnswer);
     }
 }
