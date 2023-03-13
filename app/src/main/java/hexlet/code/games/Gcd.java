@@ -17,8 +17,8 @@ public class Gcd {
     }
 
     public static void startGcdGame() {
+        System.out.println();
         String[][] questionsAnswer = new String[Engine.ROUNDS][2];
-
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             int value2 = Utils.generateRandomNumber(Utils.MAX_NUMBER);

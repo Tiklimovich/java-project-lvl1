@@ -5,19 +5,19 @@ import hexlet.code.Engine;
 
 public class Even {
     static final String EVEN_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    public static String evenResult(int value) {
+    public static boolean evenResult(int value) {
         if (value % 2 == 0) {
-            return "yes";
+            return true;
         }
-        return "no";
+        return false;
     }
     public static void startEvenGame() {
+        System.out.println();
         String[][] questionsAnswer = new String[Engine.ROUNDS][2];
-
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             questionsAnswer[i][0] = Integer.toString(value);
-            questionsAnswer[i][1] = evenResult(value);
+            questionsAnswer[i][1] = evenResult(value) ? "yes" : "no";
         }
         Engine.goGame(EVEN_DESCRIPTION, questionsAnswer);
     }

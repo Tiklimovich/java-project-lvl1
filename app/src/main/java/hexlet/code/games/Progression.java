@@ -16,12 +16,13 @@ public class Progression {
         return result;
     }
     public static void startProgressionsGame() {
+        System.out.println();
         String[][] questionsAnswer = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);
+            int firstValue = Utils.generateRandomNumber(Utils.MAX_NUMBER);
             int step = Utils.generateRandomNumber(MAX_STEP);
             int lengthOfProgression = Utils.generateRandomNumber(MIN_LENGTH_OF_PROGRESSION, MAX_LENGTH_OF_PROGRESSION);
-            int[] values = progression(value1, step, lengthOfProgression);
+            int[] values = progression(firstValue, step, lengthOfProgression);
             int answer = Utils.generateRandomNumber(1, lengthOfProgression - 1);
             String question = "";
             for (int l = 0; l < lengthOfProgression; l++) {

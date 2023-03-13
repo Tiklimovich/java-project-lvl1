@@ -13,14 +13,14 @@ public class Calc {
             case "-":
                 return Integer.toString(value1 - value2);
             case "*":
-                String toString = Integer.toString(value1 * value2);
-                return toString;
+                return Integer.toString(value1 * value2);
             default:
                 break;
         }
         return sign;
     }
     public static void startCalcGame() {
+        System.out.println();
         String[][] questionsAnswer = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int value1 = Utils.generateRandomNumber(Utils.MAX_NUMBER);

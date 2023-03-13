@@ -22,28 +22,13 @@ public class App {
         String playerInput = initialScanner.next();
         System.out.println("Your choice: " + playerInput);
         switch (playerInput) {
-            case "0":
-                break;
-            case "1":
-                Cli.greet();
-                break;
-            case "2":
-                Even.startEvenGame();
-                break;
-            case "3":
-                Calc.startCalcGame();
-                break;
-            case "4":
-                Gcd.startGcdGame();
-                break;
-            case "5":
-                Progression.startProgressionsGame();
-                break;
-            case "6":
-                Prime.startPrimeGame();
-                break;
-            default:
-                System.out.println("Wrong input");
+            case "1" -> Cli.greet();
+            case "2" -> Even.startEvenGame();
+            case "3" -> Calc.startCalcGame();
+            case "4" -> Gcd.startGcdGame();
+            case "5" -> Progression.startProgressionsGame();
+            case "6" -> Prime.startPrimeGame();
+            default -> System.out.println("Wrong input");
         }
         System.out.println("Goodbye!");
     }
