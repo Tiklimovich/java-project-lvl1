@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
+
 public class Prime {
     static final String EVEN_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
@@ -13,6 +14,7 @@ public class Prime {
         }
         return true;
     }
+
     public static void startPrimeGame() {
         System.out.println();
         String[][] questionsAnswer = new String[Engine.ROUNDS][2];

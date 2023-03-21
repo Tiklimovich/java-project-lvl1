@@ -6,6 +6,7 @@ import hexlet.code.Engine;
 public class Calc {
     static final String EVEN_DESCRIPTION = "What is the result of the expression?";
     static final String[] SIGNS = {"+", "-", "*"};
+
     public static String calcResult(String sign, int value1, int value2) {
         switch (sign) {
             case "+":
@@ -19,6 +20,7 @@ public class Calc {
         }
         return sign;
     }
+
     public static void startCalcGame() {
         System.out.println();
         String[][] questionsAnswer = new String[Engine.ROUNDS][2];
